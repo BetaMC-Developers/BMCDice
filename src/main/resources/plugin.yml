@@ -1,0 +1,9 @@
+name: BMCDice
+main: org.betamc.bmcdice.BMCDice
+version: 1.0
+
+commands:
+  dice:
+    description: A command to roll a random number
+    usage: /<command> (Minimum Roll) (Maximum roll)
+    aliases: [bmcdice, roll]
