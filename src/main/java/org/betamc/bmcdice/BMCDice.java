@@ -44,7 +44,15 @@ public class BMCDice extends JavaPlugin {
                 }
             }
 
-            if (maxRoll < minRoll) {
+            if (minRoll == maxRoll) {
+                sender.sendMessage("§cError: Minimum and maximum roll cannot be the same number");
+                return false;
+            }
+            else if (minRoll < 0 || maxRoll < 0) {
+                sender.sendMessage("§cError: Roll numbers cannot be negative");
+                return false;
+            }
+            else if (maxRoll < minRoll) {
                 sender.sendMessage("§cError: Minimum roll can't be larger than maximum roll");
                 return false;
             }
