@@ -12,7 +12,7 @@ import java.util.Random;
 
 public class BMCDice extends JavaPlugin {
     public void onEnable() {
-        getServer().getLogger().info("BMCDice loaded.");
+        getServer().getLogger().info("[BMCDice] Plugin loaded.");
     }
 
     public void onDisable() {
@@ -60,7 +60,10 @@ public class BMCDice extends JavaPlugin {
             Random rand = new Random();
             int diceRoll = rand.nextInt(maxRoll - minRoll + 1) + minRoll;
 
-            Bukkit.broadcastMessage("§a" + ((Player)sender).getName() + " §frolled§a " + diceRoll + " §ffrom§a " + minRoll + " §fto§a " + maxRoll);
+            String senderUsername = ((Player)sender).getName();
+
+            Bukkit.broadcastMessage("§a" + senderUsername + " §frolled§a " + diceRoll + " §ffrom§a " + minRoll + " §fto§a " + maxRoll);
+            getServer().getLogger().info("[BMCDice] " + ((Player)sender).getName() + " rolled " + diceRoll + " from " + minRoll + " to " + maxRoll);
         }
 
         return true;
